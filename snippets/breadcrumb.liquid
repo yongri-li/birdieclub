@@ -9,21 +9,33 @@
   <a href="/" data-translate="general.breadcrumbs.home">{{ 'general.breadcrumbs.home' | t }}</a>  
   {% if template contains 'product' %} 
   
-    {% if collection %}
-      <span class="arrow">
-        <i class="fa fa-angle-right" aria-hidden="true"></i>
-      </span>
+  {% if collection %}
+    {% assign paginate_collection = collection %}
+  {% else %}
+    {% for col in product.collections %}
+      {% if col.handle != 'frontpage' %}
+        {% assign paginate_collection = col %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 
-      {% if collection.handle %}
-      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
-        {% if settings.enable_multilang %}
-        <span class="lang1">{{ collection.title | split: '|' | first | link_to: url }}</span>
-        <span class="lang2">{{ collection.title | split: '|' | last | link_to: url }}</span>
-        {% else %}
-        <span>{{ collection.title | split: '|' | first | link_to: url }}</span>
-        {% endif %}
+  {% if paginate_collection %}    
+
+    <span class="arrow">
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </span>
+
+    {% if paginate_collection.handle %}
+    {% capture url %}/collections/{{ paginate_collection.handle }}{% endcapture %}
+      {% if settings.enable_multilang %}
+      <span class="lang1">{{ paginate_collection.title | split: '|' | first | link_to: url }}</span>
+      <span class="lang2">{{ paginate_collection.title | split: '|' | last | link_to: url }}</span>
+      {% else %}
+      <span>{{ paginate_collection.title | split: '|' | first | link_to: url }}</span>
       {% endif %}
     {% endif %}
+  {% endif %}
   
     <span class="arrow">
       <i class="fa fa-angle-right" aria-hidden="true"></i>
