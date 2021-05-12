@@ -115,6 +115,47 @@
                                         {% endif %}">
                                 {% include 'multilang' with block.settings.heading  %}
                             </h2>
+                            {% if block.settings.slide-des != blank %}
+                                <p class="slide-text"
+                                    style="{% if block.settings.font_size_des != blank %}
+                                            font-size: {{ block.settings.font_size_des }};
+                                            {% endif %}
+                                            {% if block.settings.color_des != blank %}
+                                            color: {{ block.settings.color_des }};
+                                            {% endif %}">
+                                    {% include 'multilang' with block.settings.slide-des  %}
+                                </p>
+                                <style>
+                                    @media (min-width: 769px){
+                                        {% if block.settings.sub_heading != blank %}
+                                        .slide-content .slide-text{
+                                            margin-bottom: 45px;
+                                        }
+                                        {% endif %}
+                                    }
+                                </style>
+                                {% endif %}
+
+                                {% if block.settings.button_slide != blank %}
+                                <a href="{{ block.settings.link }}" class="slide-button btn{% if block.settings.slide-des == blank %} no-des{% endif %}"
+                                    style="{% if block.settings.bg_button != blank %}
+                                            background-color:{{ block.settings.bg_button }};
+                                            {% endif %}
+                                            {% if block.settings.border_button != blank %}
+                                            border-color:{{ block.settings.border_button }};
+                                            {% endif %}
+                                            {% if block.settings.color_button != blank %}
+                                            color:{{ block.settings.color_button }};
+                                            {% endif %}
+                                            {% if block.settings.sub_heading != blank %}
+                                            min-width: 167px;
+                                            padding: 15px 25px 13px;
+                                            border-radius: 30px;
+                                            font-weight: 600;
+                                            {% endif %}">
+                                    {% include 'multilang' with block.settings.button_slide  %}
+                                </a>
+                                {% endif %}
                         </div>
                         {% endif %}
                     </div>
@@ -151,6 +192,48 @@
                                         {% endif %}">
                                 {% include 'multilang' with block.settings.heading  %}
                             </h2>
+                            {% if block.settings.slide-des != blank %}
+                                <p class="slide-text"
+                                    style="{% if block.settings.font_size_des != blank %}
+                                            font-size: {{ block.settings.font_size_des }};
+                                            {% endif %}
+                                            {% if block.settings.color_des != blank %}
+                                            color: {{ block.settings.color_des }};
+                                            {% endif %}">
+                                    {% include 'multilang' with block.settings.slide-des  %}
+                                </p>
+                                <style>
+                                    @media (min-width: 769px){
+                                        {% if block.settings.sub_heading != blank %}
+                                        .slide-content .slide-text{
+                                            margin-bottom: 45px;
+                                        }
+                                        {% endif %}
+                                    }
+                                </style>
+                                {% endif %}
+
+                                {% if block.settings.button_slide != blank %}
+                                <a href="{{ block.settings.link }}" class="slide-button btn{% if block.settings.slide-des == blank %} no-des{% endif %}"
+                                    style="{% if block.settings.bg_button != blank %}
+                                            background-color:{{ block.settings.bg_button }};
+                                            {% endif %}
+                                            {% if block.settings.border_button != blank %}
+                                            border-color:{{ block.settings.border_button }};
+                                            {% endif %}
+                                            {% if block.settings.color_button != blank %}
+                                            color:{{ block.settings.color_button }};
+                                            {% endif %}
+                                            {% if block.settings.sub_heading != blank %}
+                                            min-width: 167px;
+                                            padding: 15px 25px 13px;
+                                            border-radius: 30px;
+                                            font-weight: 600;
+                                            {% endif %}">
+                                    {% include 'multilang' with block.settings.button_slide  %}
+                                </a>
+                            {% endif %}
+                            
                         </div>
                         {% endif %}
                     </div>
