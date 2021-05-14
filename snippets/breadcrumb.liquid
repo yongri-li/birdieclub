@@ -3,6 +3,8 @@
 {% endcomment %}
 
 {% if settings.display_breadcrumb %}
+ {% assign collection_default_name = "products" %}
+ {% assign collection_multi_lang_name = "products" %}
 
 {% unless template == 'index' %}
 <div class="breadcrumb">
@@ -29,10 +31,10 @@
     {% if paginate_collection.handle %}
     {% capture url %}/collections/{{ paginate_collection.handle }}{% endcapture %}
       {% if settings.enable_multilang %}
-      <span class="lang1">{{ paginate_collection.title | split: '|' | first | link_to: url }}</span>
-      <span class="lang2">{{ paginate_collection.title | split: '|' | last | link_to: url }}</span>
+      <span class="lang1">{{ collection_default_name | link_to: url }}</span>
+      <span class="lang2">{{ collection_multi_lang_name | link_to: url }}</span>
       {% else %}
-      <span>{{ paginate_collection.title | split: '|' | first | link_to: url }}</span>
+      <span>{{ collection_default_name | link_to: url }}</span>
       {% endif %}
     {% endif %}
   {% endif %}
