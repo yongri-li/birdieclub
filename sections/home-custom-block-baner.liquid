@@ -96,7 +96,7 @@
                     <div class="img-box">
                         <a href="{{ block.settings.link }}">
                             {%- assign img_url = block.settings.image | img_url: 'master' -%}
-
+                            {%- assign mob_img_url = block.settings.mob_image | img_url: 'master' -%}
                             {% if block.settings.display_parallax %}
                             <div class="parallax-image" style="background-image: url({{img_url}});"></div> 
                             {% endif %}
@@ -104,7 +104,10 @@
                             {% if block.settings.image != blank %}
                             <img data-src="{{ img_url }}"
                                 src="https:{{ img_url }}" alt="{{ block.settings.image.alt | default: shop.name }}" itemprop="logo"
-                                class="lazyautosizes lazyloaded" data-sizes="auto">
+                                class="lazyautosizes hide--mobile lazyloaded" data-sizes="auto">
+                            <img data-src="{{ mob_img_url | defalut: img_url }}"
+                                src="https:{{ mob_img_url | defalut: img_url }}" alt="{{ block.settings.mob_image.alt | default: shop.name }}" itemprop="logo"
+                                class="lazyautosizes hide--desktop lazyloaded" data-sizes="auto">
                             {% else %}
                             <div class="not_img">
                             1880 x 720px
@@ -457,6 +460,11 @@
                     "type": "image_picker",
                     "id": "image",
                     "label" : "Select Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mob_image",
+                    "label" : "Select Mobile Image"
                 },
                 {
                     "type": "header",

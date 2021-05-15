@@ -13,3 +13,21 @@
         width: 100%;
     }
 }
+body.template-index {
+    #shopify-section-1583271079191 {
+        .banner-content {
+            @media (max-width: 767px) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                a {
+                    background-color: #232323 !important;
+                    border-color: #232323 !important;
+                    color: #ffffff !important;
+                }
+            }
+        }
+    }
+}
