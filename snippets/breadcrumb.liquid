@@ -58,10 +58,13 @@
       {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
 	  <span class="bd-title">
         {% if settings.enable_multilang %}
-        <span class="lang1">{{ collection.title | split: '|' | first | link_to: url }}</span>
-        <span class="lang2">{{ collection.title | split: '|' | last | link_to: url }}</span>
+         <span class="lang1">{{ collection_default_name | link_to: url }}</span>
+         <span class="lang2">{{ collection_multi_lang_name | link_to: url }}</span>
+        {% comment %} <span class="lang1">{{ collection.title | split: '|' | first | link_to: url }}</span>
+        <span class="lang2">{{ collection.title | split: '|' | last | link_to: url }}</span> {% endcomment %}
         {% else %}
-        <span>{{ collection.title | split: '|' | first | link_to: url }}</span>
+        <span>{{ collection_default_name | link_to: url }}</span>
+        {% comment %} <span>{{ collection.title | split: '|' | first | link_to: url }}</span> {% endcomment %}
         {% endif %}
 
         <span class="arrow">
@@ -85,11 +88,15 @@
   
       <span class="bd-title">
         {% if settings.enable_multilang %}
-        <span class="lang1">{{ collection.title | split: '|' | first | link_to: url }}</span>
-        <span class="lang2">{{ collection.title | split: '|' | last | link_to: url }}</span>
+         <span class="lang1">{{ collection_default_name | link_to: url }}</span>
+         <span class="lang2">{{ collection_multi_lang_name | link_to: url }}</span>
+        {% comment %} <span class="lang1">{{ collection.title | split: '|' | first | link_to: url }}</span>
+        <span class="lang2">{{ collection.title | split: '|' | last | link_to: url }}</span> {% endcomment %}
         {% else %}
-        <span>{{ collection.title | split: '|' | first | link_to: url }}</span>
+        <span>{{ collection_default_name | link_to: url }}</span>
+        {% comment %} <span>{{ collection.title | split: '|' | first | link_to: url }}</span> {% endcomment %}
         {% endif %}
+
   	  </span>
 
   	{% endif %}

@@ -1,0 +1,15 @@
+.hide--mobile {
+    @media (max-width: 767px) {
+        display: none !important;
+    }
+}
+.hide--desktop {
+    @media (min-width: 768px) {
+        display: none !important;
+    }
+}
+.image__wrapper {
+    img {
+        width: 100%;
+    }
+}
