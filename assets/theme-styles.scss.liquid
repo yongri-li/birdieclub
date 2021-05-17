@@ -966,7 +966,8 @@ table {
     &.menu-open {
         display: block;
         position: fixed;
-        background: {{ settings.bg_sale }};
+        {% comment %} background: {{ settings.bg_sale }}; {% endcomment %}
+        background: #EDDCDB;
         z-index: 33;
         top: 0;
         right: 0;
@@ -2668,6 +2669,9 @@ table {
     .des {
         line-height: $font_size + 10;
         margin-bottom: 30px;
+        @media (max-width: 767px) {
+            margin-bottom: 0px;
+        }
     }
 
     .btn {
@@ -2681,7 +2685,10 @@ table {
     }
 
     &.spotlight-inner {
-        padding: 30px 13px 0px;
+        padding: 30px 13px 35px;
+        @media (max-width: 767px) {
+            padding: 30px 13px 0px;
+        }
     }
 }
 
@@ -12523,7 +12530,8 @@ table {
         &:after {
             width: 32px;
             height: 32px;
-            background: #e95144;
+            {% comment %} background: #e95144; {% endcomment %}
+            background: #EDDCDB;
             color: #ffffff;
             font-size: 25px;
             @include border-radius(50%);
@@ -13187,3 +13195,19 @@ table {
     border-color: transparent !important;
 }
 
+.cart-popup-action {
+    .btn-actions {
+        .btn-continue, .btn-view-cart {
+            border: 0px;
+        }
+    }
+}
+#dropdown-cart {
+    .has-items {
+        .actions {
+            .btn-view-cart {
+                border: 0px;
+            }
+        }
+    }
+}

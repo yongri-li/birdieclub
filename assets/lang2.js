@@ -118,7 +118,7 @@ window.lang2 =
       "error": "Fehler",
       "loading": "Wird Geladen",
       "close": "Wird Geladen",
-      "popup_cart_des": "The following items has been added to your cart:",
+      "popup_cart_des": "The following items have been added to your cart:",
       "items_in_your_cart": "items in your shopping cart "
     }
   },
